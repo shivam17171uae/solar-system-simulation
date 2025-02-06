@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar System Simulation</title>
+    <style>
+        body { margin: 0; overflow: hidden; /* Hide scrollbars */ }
+        canvas { display: block; }
+        .label {
+            color: white;
+            font-family: sans-serif;
+            padding: 2px;
+            background: rgba(0, 0, 0, 0.6);
+            user-select: none; /* Prevent text selection */
+        }
+        #infoPanel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none; /* Initially hidden */
+            z-index: 100;  /* Higher z-index */
+            font-family: sans-serif;
+        }
+        #resetButton {
+            position: absolute;
+            top: 10px;
+            right: 10px; /* Spacing from the right */
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 100; /* Higher z-index */
+        }
+
+        #resetButton:hover {
+            background-color: #3e8e41;
+        }
+
+        /* Tooltip styles */
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            display: none;
+            pointer-events: none;
+            z-index: 200; /* Even higher z-index */
+            font-family: sans-serif;
+        }
+
+        /* Position the GUI container */
+        .dg.main {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 50;
+            /* Remove margin-right */
+        }
+
+    </style>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/"
+          }
+        }
+    </script>
+</head>
+<body>
+    <div id="infoPanel"></div>
+    <button id="resetButton">Reset Camera</button>
+    <div class="tooltip"></div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
